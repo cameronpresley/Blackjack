@@ -18,7 +18,6 @@ let main argv =
         c |> List.sortBy(fun _ -> rand.Next())
 
     let deck = shuffle |> CreateDeck
-    let maybe = new MaybeBuilder()
 
     let game = maybe {
         let! game = Game.CreateGame DrawCard deck 2

@@ -10,8 +10,6 @@ type Status = Blackjack | Busted of Score | Stayed of Score | CardsDealt
 
 type Participant = {Hand:Hand; Status:Status}
 
-let maybe = new MaybeBuilder()
-
 let wasDealtBlackjack hand =
     if hand |> List.length <> 2 then CardsDealt
     elif (hand |> ScoreForHand) = Score 21 then Blackjack

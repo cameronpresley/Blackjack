@@ -11,8 +11,6 @@ open Dealer
 open Printing
 open MakeChoices
 
-let maybe = new MaybeBuilder()
-
 let TakesTurn printsGame makesChoice scoreHand drawCard deck participant =
     printsGame ()
     match makesChoice () with
@@ -27,5 +25,3 @@ let TakesTurn printsGame makesChoice scoreHand drawCard deck participant =
     | Stay ->
         let score = participant.Hand |> scoreHand
         ({participant with Status=Stayed score},deck) |> Some
-
-

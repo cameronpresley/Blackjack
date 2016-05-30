@@ -9,8 +9,6 @@ open Card
 
 type Game = {Players:Player list; Dealer:Dealer; Deck:Deck}
 
-let maybe = new MaybeBuilder()
-
 let CreateGame drawCard deck numPlayers =
     let createPlayers state id =
         maybe {

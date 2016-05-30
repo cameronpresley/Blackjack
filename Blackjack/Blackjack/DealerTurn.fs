@@ -16,7 +16,6 @@ let CanDealerTakeTurn (Dealer dealer) players =
     else true
 
 let rec DealerTakesTurn game =
-    
     if CanDealerTakeTurn game.Dealer game.Players then
         let (Dealer dealer) = game.Dealer
         let printGame game () = PrintGameDuringPlay game

@@ -15,3 +15,5 @@ type MaybeBuilder() =
 
     member this.Return x =
         Some x
+
+let maybe = new MaybeBuilder()
