@@ -1,17 +1,17 @@
 ﻿module Infrastructure
+
 open FSharp.Reflection
 
-let GetDiscriminatedUnionEnums<'a> () =
-    FSharpType.GetUnionCases(typeof<'a>)
-    |> Array.map (fun case -> FSharpValue.MakeUnion(case, [||]) :?> 'a)
+let GetAllUnionCases<'T> () =
+    FSharpType.GetUnionCases(typeof<'T>)
+    |> Array.map (fun case -> FSharpValue.MakeUnion(case, [||]) :?> 'T)
     |> Array.toList
 
 type MaybeBuilder() =
-    member this.Bind(x, f) = 
-        match x with
-        | Some x -> f x
+    member this.Bind(m, f) =
+        match m with
         | None -> None
+        | Some x -> f x
 
-    member this.Return(x) = Some x
-
-
+    member this.Return x =
+        Some x

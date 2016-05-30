@@ -49,7 +49,19 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Infrastructure.fs" />
-    <Compile Include="Domain.fs" />
+    <Compile Include="Card.fs" />
+    <Compile Include="Deck.fs" />
+    <Compile Include="Scoring.fs" />
+    <Compile Include="Participant.fs" />
+    <Compile Include="Dealer.fs" />
+    <Compile Include="Player.fs" />
+    <Compile Include="Game.fs" />
+    <Compile Include="Printing.fs" />
+    <Compile Include="MakeChoices.fs" />
+    <Compile Include="Turn.fs" />
+    <Compile Include="DealerTurn.fs" />
+    <Compile Include="PlayerTurn.fs" />
+    <Compile Include="Outcome.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
   </ItemGroup>
