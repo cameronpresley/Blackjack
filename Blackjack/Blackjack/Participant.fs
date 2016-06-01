@@ -23,4 +23,3 @@ let CreateParticipant drawCard deck =
         let status = wasDealtBlackjack hand 
         return {Hand=hand; Status=status},secondResult.RestOfDeck
     }
-

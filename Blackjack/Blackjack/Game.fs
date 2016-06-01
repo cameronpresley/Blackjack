@@ -4,8 +4,6 @@ open Player
 open Deck
 open Dealer
 open Infrastructure
-open Participant
-open Card
 
 type Game = {Players:Player list; Dealer:Dealer; Deck:Deck}
 

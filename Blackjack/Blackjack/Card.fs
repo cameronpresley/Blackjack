@@ -7,5 +7,4 @@ type Suit = Diamonds | Clubs | Spades | Hearts
 
 type Card = {Rank:Rank; Suit:Suit}
 
-let PrintCard c =
-    printfn "%A of %A" c.Rank c.Suit 
+let PrintCard c = printfn "%A of %A" c.Rank c.Suit 

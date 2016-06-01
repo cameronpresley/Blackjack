@@ -5,7 +5,6 @@ open Dealer
 open System
 open Scoring
 
-
 type Action = Hit | Stay
 
 let rec PlayerMakesChoice player () = 

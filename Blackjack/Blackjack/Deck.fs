@@ -19,5 +19,7 @@ let CreateDeck shuffle =
 type DrawResult = {Card:Card; RestOfDeck:Deck}
 let DrawCard deck =
     match deck with
-    | [] -> None
+    | [] -> 
+        printfn "Deck is empty, couldn't draw a card."
+        None
     | h::t -> {Card=h; RestOfDeck=t} |> Some

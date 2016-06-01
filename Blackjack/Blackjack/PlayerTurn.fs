@@ -24,7 +24,9 @@ let rec PlayerTakesTurn game playerId =
         let player = game.Players |> List.find(fun x -> x.Id = playerId)
         let makesChoice = PlayerMakesChoice player
         match TakesTurn printGame makesChoice ScoreForHand DrawCard game.Deck player.Participant with
-        | None -> None
+        | None -> 
+            printfn "Player %i couldn't take turn" playerId
+            None
         | Some (participant,deck) ->
             let player = {player with Participant=participant}
             let game = {game with Deck = deck; Players=game.Players |> replacePlayer player} |> Some

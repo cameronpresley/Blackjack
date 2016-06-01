@@ -21,7 +21,9 @@ let rec DealerTakesTurn game =
         let printGame game () = PrintGameDuringPlay game
 
         match TakesTurn (printGame game) (DealerMakesChoice game.Dealer) ScoreForHand DrawCard game.Deck dealer with
-        | None -> None
+        | None -> 
+            printfn "Dealer couldn't take a turn"
+            None
         | Some (participant, deck) -> 
             let game = {game with Deck=deck; Dealer=(participant |> Dealer)}
             match participant.Status with

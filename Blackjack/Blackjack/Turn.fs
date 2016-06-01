@@ -6,9 +6,6 @@ open Deck
 open Game 
 open System
 open Scoring
-open Player
-open Dealer
-open Printing
 open MakeChoices
 
 let TakesTurn printsGame makesChoice scoreHand drawCard deck participant =

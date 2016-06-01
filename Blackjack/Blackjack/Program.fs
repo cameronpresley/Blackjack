@@ -23,8 +23,11 @@ let main argv =
         let! game = Game.CreateGame DrawCard deck 2
         let! game = game |> PlayersTakeTurn
         let! game = game |> DealerTakesTurn
-        do game |> PrintFinalGameStanding
-        do game.Players |> List.iter (fun x -> PrintWinner game.Dealer x)
         return game
     }
+    match game with
+    | None -> printfn "Error while playing the game"
+    | Some game -> 
+        game |> PrintFinalGameStanding
+        game.Players |> List.iter (fun x -> PrintWinner game.Dealer x)
     0 // return an integer exit code
