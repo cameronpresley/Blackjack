@@ -8,7 +8,7 @@ open Scoring
 type Action = Hit | Stay
 
 let rec PlayerMakesChoice player () = 
-    printfn "Player %i's turn" player.Id
+    printfn "Player %i's turn" player.Number
     printfn "1). Hit"
     printfn "2). Stay"
     match Console.ReadLine() with

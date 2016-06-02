@@ -21,7 +21,7 @@ let PrintDealerAfterGame (Dealer d) =
     d.Hand |> List.iter PrintCard
 
 let PrintPlayer p = 
-    printfn "Player %i has %s" p.Id (p.Participant.Hand |> PrintScore)
+    printfn "Player %i has %s" p.Number (p.Participant.Hand |> PrintScore)
     p.Participant.Hand |> List.iter PrintCard
     printfn ""
 

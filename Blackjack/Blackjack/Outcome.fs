@@ -6,7 +6,7 @@ open Scoring
 open Participant
 
 let PrintWinner (Dealer d) player =
-    printfn "Outcome for Player %i" player.Id
+    printfn "Outcome for Player %i" player.Number
     printf "\t"
 
     match d.Status,player.Participant.Status with
@@ -24,5 +24,4 @@ let PrintWinner (Dealer d) player =
         else printfn "\tPlayer wins"
 
     | CardsDealt, _ -> printfn "Dealer never took a turn."
-    | _, CardsDealt -> printfn "Player never took a turn."    
-    
+    | _, CardsDealt -> printfn "Player never took a turn."
