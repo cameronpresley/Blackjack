@@ -6,7 +6,7 @@ open Infrastructure
 open Scoring
 
 type Hand = Card list
-type Status = Blackjack | Busted of Score | Stayed of Score | CardsDealt
+type Status = Busted of Score | Stayed of Score | Blackjack | CardsDealt
 
 type Participant = {Hand:Hand; Status:Status}
 

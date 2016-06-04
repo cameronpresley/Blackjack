@@ -17,10 +17,8 @@ let main argv =
         let rand = new System.Random() 
         c |> List.sortBy(fun _ -> rand.Next())
 
-    let deck = shuffle |> CreateDeck
-
     let game = maybe {
-        let! game = Game.CreateGame DrawCard deck 2
+        let! game = CreateGame shuffle DrawCard 2
         let! game = game |> PlayersTakeTurn
         let! game = game |> DealerTakesTurn
         return game

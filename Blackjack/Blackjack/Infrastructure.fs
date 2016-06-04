@@ -8,10 +8,10 @@ let GetAllUnionCases<'T> () =
     |> Array.toList
 
 type MaybeBuilder() =
-    member this.Bind(m, f) =
-        match m with
+    member this.Bind(input, func) =
+        match input with
         | None -> None
-        | Some x -> f x
+        | Some x -> func x
 
     member this.Return x =
         Some x
